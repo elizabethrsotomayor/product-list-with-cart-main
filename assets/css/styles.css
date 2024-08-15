@@ -1,0 +1,69 @@
+@font-face {
+    font-family: 'RedHatText';
+    src: url('../fonts/static/RedHatText-Regular.ttf') format('truetype'),
+        url('../fonts/static/RedHatText-Bold.ttf') format('truetype'),
+        url('../fonts/static/RedHatText-SemiBold.ttf') format('truetype'),
+        url('../fonts/RedHatText-Italic-VariableFont_wght.ttf') format('truetype'),
+        url('../fonts/RedHatText-VariableFont_wght.ttf') format('truetype')
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    font-family: 'RedHatText';
+    display: flex;
+}
+
+img, picture {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+.desserts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.main-heading {
+    display: block;
+}
+
+.attribution {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+      font-size: 11px;
+      text-align: center;
+  }
+
+  .attribution a {
+      color: hsl(228, 45%, 44%);
+  }

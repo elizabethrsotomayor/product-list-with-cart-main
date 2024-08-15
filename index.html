@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  
+  <title>Frontend Mentor | Product list with cart</title>
+</head>
+<body>
+
+  <div class="dessert-items-wrapper">
+    <h1 class="main-heading">Desserts</h1>
+    
+    <div class="desserts-grid">
+      <div class="dessert-item">
+        <picture>
+          <source media="(min-width: 900px)" srcset="assets\images\image-waffle-desktop.jpg">
+          <source media="(min-width: 480px)" srcset="assets\images\image-waffle-tablet.jpg">
+          <img src="assets\images\image-waffle-mobile.jpg" alt="waffle image">
+        </picture>
+        <span class="dessert-type">Waffle</span>
+        <h2 class="dessert-heading">Waffle with Berries</h2>
+        <span class="price">6.50</span>
+        Add to Cart
+      </div>
+      
+      <div class="dessert-item">
+        <picture>
+          <source media="(min-width: 900px)" srcset="assets\images\image-creme-brulee-desktop.jpg">
+          <source media="(min-width: 480px)" srcset="assets\images\image-creme-brulee-tablet.jpg">
+          <img src="assets\images\image-creme-brulee-mobile.jpg" alt="creme brulee image">
+        </picture>
+        <span class="dessert-type">Crème Brûlée</span>
+        <h2 class="dessert-heading">Vanilla Bean Crème Brûlée</h2>
+        <span class="price">7.00</span>
+        Add to Cart
+      </div>
+        
+      <div class="dessert-item">
+        <picture>
+          <source media="(min-width: 900px)" srcset="assets\images\image-macaron-desktop.jpg">
+          <source media="(min-width: 480px)" srcset="assets\images\image-macaron-tablet.jpg">
+          <img src="assets\images\image-macaron-mobile.jpg" alt="macaron image">
+        </picture>
+        <span class="dessert-type">Macaron</span>
+        <h2 class="dessert-heading">Macaron Mix of Five</h2>
+        <span class="price">8.00</span>
+        Add to Cart
+      </div>
+      
+      <div class="dessert-item">
+        <picture>
+          <source media="(min-width: 900px)" srcset="assets\images\image-tiramisu-desktop.jpg">
+          <source media="(min-width: 480px)" srcset="assets\images\image-tiramisu-tablet.jpg">
+          <img src="assets\images\image-tiramisu-mobile.jpg" alt="Tiramisu image">
+        </picture>
+        <span class="dessert-type">Tiramisu</span>
+        <h2 class="dessert-heading">Classic Tiramisu</h2>
+        <span class="price">5.50</span>
+        Add to Cart
+      </div>
+      
+      <div class="dessert-item">
+        <picture>
+          <source media="(min-width: 900px)" srcset="assets\images\image-baklava-desktop.jpg">
+          <source media="(min-width: 480px)" srcset="assets\images\image-baklava-tablet.jpg">
+          <img src="assets\images\image-baklava-mobile.jpg" alt="baklava image">
+        </picture>
+        <span class="dessert-type">Baklava</span>
+        <h2 class="dessert-heading">Pistachio Baklava</h2>
+        <span class="price">4.00</span>
+        Add to Cart
+      </div>
+      
+      <div class="dessert-item">
+        <picture>
+          <source media="(min-width: 900px)" srcset="assets\images\image-meringue-desktop.jpg">
+          <source media="(min-width: 480px)" srcset="assets\images\image-meringue-tablet.jpg">
+          <img src="assets\images\image-meringue-mobile.jpg" alt="meringue image">
+        </picture>
+        <span class="dessert-type">Pie</span>
+        <h2 class="dessert-heading">Lemon Meringue Pie</h2>
+        <span class="price">5.00</span>
+        Add to Cart
+      </div>
+      
+      <div class="dessert-item">
+        <picture>
+          <source media="(min-width: 900px)" srcset="assets\images\image-cake-desktop.jpg">
+          <source media="(min-width: 480px)" srcset="assets\images\image-cake-tablet.jpg">
+          <img src="assets\images\image-cake-mobile.jpg" alt="cake image">
+        </picture>
+        <span class="dessert-type">Cake</span>
+        <h2 class="dessert-heading">Red Velvet Cake</h2>
+        <span class="price">4.50</span>
+        Add to Cart
+      </div>
+      
+      <div class="dessert-item">
+        <picture>
+          <source media="(min-width: 900px)" srcset="assets\images\image-brownie-desktop.jpg">
+          <source media="(min-width: 480px)" srcset="assets\images\image-brownie-tablet.jpg">
+          <img src="assets\images\image-brownie-mobile.jpg" alt="brownie image">
+        </picture>
+        <span class="dessert-type">Brownie</span>
+        <h2 class="dessert-heading">Salted Caramel Brownie</h2>
+        <span class="price">4.50</span>
+        Add to Cart
+      </div>
+      
+      <div class="dessert-item">
+        <picture>
+          <source media="(min-width: 900px)" srcset="assets\images\image-panna-cotta-desktop.jpg">
+          <source media="(min-width: 480px)" srcset="assets\images\image-panna-cotta-tablet.jpg">
+          <img src="assets\images\image-panna-cotta-mobile.jpg" alt="panna-cotta image">
+        </picture>
+        <span class="dessert-type">Panna Cotta</span>
+        <h2 class="dessert-heading">Vanilla Panna Cotta</h2>
+        <span class="price">6.50</span>
+        Add to Cart
+      </div>
+    <!-- End grid -->
+    </div>
+  <!-- End wrapper -->
+  </div>
+      
+    <div class="cart-container">
+      Your Cart (<!-- Quantity -->)
+      Your added items will appear here
+    </div>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+</body>
+</html>
