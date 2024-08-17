@@ -7,6 +7,11 @@
         url('../fonts/RedHatText-VariableFont_wght.ttf') format('truetype')
 }
 
+@font-face {
+    font-family: 'RedHatText-Bold';
+    src: url('../fonts/static/RedHatText-Bold.ttf') format('truetype')
+}
+
 *,
 *::before,
 *::after {
@@ -23,6 +28,7 @@ body {
     -webkit-font-smoothing: antialiased;
     font-family: 'RedHatText';
     display: flex;
+    flex-direction: column;
 }
 
 img, picture {
@@ -50,16 +56,66 @@ h6 {
 .desserts-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    column-gap: 1.2rem;
+    row-gap: 1.2rem;
+}
+
+.dessert-img {
+    width: 20rem;
+    border-radius: 1rem;
+    margin-bottom: 2.4rem;
 }
 
 .main-heading {
     display: block;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+    font-family: 'RedHatText-Bold';
+}
+
+.container {
+    display: flex;
+    gap: 1rem;
+    margin: 6rem;
+}
+
+.dessert-item {
+    position: relative;
+}
+
+.add-cart {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+    font-weight: 600;
+    font-size: 1.2rem;
+    border: 1px solid hsl(14, 86%, 42%);
+    border-radius: 2rem;
+    width: 15rem;
+    padding: 1rem;
+    color: #000;
+    background-color: white;
+    position: absolute;
+    bottom: 25%;
+    left: 10%;
+}
+
+.material-symbols-outlined {
+    color: hsl(14, 86%, 42%)
+}
+
+.dessert-type {
+    color: #757575;
+}
+
+.price {
+    color: hsl(14, 86%, 42%);
+    font-size: 1.4rem;
+    font-weight: 600;
 }
 
 .attribution {
-    position: absolute;
-    bottom: 0;
-    left: 0;
       font-size: 11px;
       text-align: center;
   }
