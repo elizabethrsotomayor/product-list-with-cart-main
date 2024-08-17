@@ -29,6 +29,7 @@ body {
     font-family: 'RedHatText';
     display: flex;
     flex-direction: column;
+    background-color: hsl(13, 31%, 94%);
 }
 
 img, picture {
