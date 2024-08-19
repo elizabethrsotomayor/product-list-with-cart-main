@@ -89,22 +89,52 @@ h6 {
     position: relative;
 }
 
-.add-cart {
+.add-cart, .active-state {
     text-decoration: none;
     display: flex;
     justify-content: center;
-    gap: 0.3rem;
     font-weight: 600;
     font-size: 1.2rem;
     border: 1px solid hsl(14, 86%, 42%);
     border-radius: 2rem;
     width: 15rem;
     padding: 1rem;
-    color: #000;
-    background-color: white;
     position: absolute;
     bottom: 25%;
     left: 10%;
+}
+
+.add-cart {
+    gap: 0.3rem;
+    color: #000;
+    background-color: white;
+}
+
+.active-state {
+    gap: 4rem;
+    background-color: hsl(14, 86%, 42%);
+    color:white;
+    display: none;
+}
+
+.adjust-quantity {
+    background: none;
+    color: inherit;
+    border: 1px solid white;
+    border-radius: 50%;
+    padding: 0 0.5rem;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+
+.adjust-quantity:hover {
+    background-color: white;
+    color:hsl(14, 86%, 42%);
+}
+
+.add-cart:hover {
+    color: hsl(14, 86%, 42%)
 }
 
 .material-symbols-outlined {
@@ -117,8 +147,8 @@ h6 {
 
 .price {
     color: hsl(14, 86%, 42%);
-    font-size: 1.4rem;
-    font-weight: 600;
+    font-size: 1.2rem;
+    font-family: "RedHatText-SemiBold";
 }
 
 .cart-container {
@@ -146,6 +176,7 @@ h6 {
     text-align: center;
     font-family: 'RedHatText-SemiBold';
     color: hsl(12, 20%, 44%);
+    margin-bottom: 1rem;
 }
 
 .attribution {
