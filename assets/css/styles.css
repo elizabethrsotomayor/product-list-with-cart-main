@@ -12,6 +12,11 @@
     src: url('../fonts/static/RedHatText-Bold.ttf') format('truetype')
 }
 
+@font-face {
+    font-family: 'RedHatText-SemiBold';
+    src: url('../fonts/static/RedHatText-SemiBold.ttf') format('truetype')
+}
+
 *,
 *::before,
 *::after {
@@ -76,7 +81,7 @@ h6 {
 
 .container {
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
     margin: 6rem;
 }
 
@@ -114,6 +119,33 @@ h6 {
     color: hsl(14, 86%, 42%);
     font-size: 1.4rem;
     font-weight: 600;
+}
+
+.cart-container {
+    background-color: white;
+    padding: 1.4rem;
+    border-radius: 1rem;
+    height: 30%;
+    width: 20vw;
+}
+
+.cart-heading {
+    color: hsl(14, 86%, 42%);
+    font-size: 1.4rem;
+    font-family: 'RedHatText-Bold';
+    margin-bottom: 2rem;
+}
+
+.empty-cart-img {
+    margin: auto;
+    margin-bottom: 1rem;
+}
+
+.cart-subtext {
+    display: block;
+    text-align: center;
+    font-family: 'RedHatText-SemiBold';
+    color: hsl(12, 20%, 44%);
 }
 
 .attribution {
