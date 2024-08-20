@@ -18,7 +18,7 @@
     <h1 class="main-heading">Desserts</h1>
     
     <div class="desserts-grid">
-      <div class="dessert-item">
+      <div class="dessert-item" data-item="waffle">
         <picture class="dessert-img">
           <source media="(min-width: 900px)" srcset="assets\images\image-waffle-desktop.jpg">
           <source media="(min-width: 480px)" srcset="assets\images\image-waffle-tablet.jpg">
@@ -37,7 +37,7 @@
         </div>
       </div>
       
-      <div class="dessert-item">
+      <div class="dessert-item" data-item="creme-brulee">
         <picture class="dessert-img">
           <source media="(min-width: 900px)" srcset="assets\images\image-creme-brulee-desktop.jpg">
           <source media="(min-width: 480px)" srcset="assets\images\image-creme-brulee-tablet.jpg">
@@ -51,7 +51,7 @@
         </span>Add to Cart</a>
       </div>
         
-      <div class="dessert-item">
+      <div class="dessert-item" data-item="macaron">
         <picture class="dessert-img">
           <source media="(min-width: 900px)" srcset="assets\images\image-macaron-desktop.jpg">
           <source media="(min-width: 480px)" srcset="assets\images\image-macaron-tablet.jpg">
@@ -65,7 +65,7 @@
         </span>Add to Cart</a>
       </div>
       
-      <div class="dessert-item">
+      <div class="dessert-item" data-item="tiramisu">
         <picture class="dessert-img">
           <source media="(min-width: 900px)" srcset="assets\images\image-tiramisu-desktop.jpg">
           <source media="(min-width: 480px)" srcset="assets\images\image-tiramisu-tablet.jpg">
@@ -79,7 +79,7 @@
         </span>Add to Cart</a>
       </div>
       
-      <div class="dessert-item">
+      <div class="dessert-item" data-item="baklava">
         <picture class="dessert-img">
           <source media="(min-width: 900px)" srcset="assets\images\image-baklava-desktop.jpg">
           <source media="(min-width: 480px)" srcset="assets\images\image-baklava-tablet.jpg">
@@ -93,7 +93,7 @@
         </span>Add to Cart</a>
       </div>
       
-      <div class="dessert-item">
+      <div class="dessert-item" data-item="lemon-meringue">
         <picture class="dessert-img">
           <source media="(min-width: 900px)" srcset="assets\images\image-meringue-desktop.jpg">
           <source media="(min-width: 480px)" srcset="assets\images\image-meringue-tablet.jpg">
@@ -107,7 +107,7 @@
         </span>Add to Cart</a>
       </div>
       
-      <div class="dessert-item">
+      <div class="dessert-item" data-item="red-velvet">
         <picture class="dessert-img">
           <source media="(min-width: 900px)" srcset="assets\images\image-cake-desktop.jpg">
           <source media="(min-width: 480px)" srcset="assets\images\image-cake-tablet.jpg">
@@ -121,7 +121,7 @@
         </span>Add to Cart</a>
       </div>
       
-      <div class="dessert-item">
+      <div class="dessert-item" data-item="brownie">
         <picture class="dessert-img">
           <source media="(min-width: 900px)" srcset="assets\images\image-brownie-desktop.jpg">
           <source media="(min-width: 480px)" srcset="assets\images\image-brownie-tablet.jpg">
@@ -135,7 +135,7 @@
         </span>Add to Cart</a>
       </div>
       
-      <div class="dessert-item">
+      <div class="dessert-item" data-item="panna-cotta">
         <picture>
           <source media="(min-width: 900px)" srcset="assets\images\image-panna-cotta-desktop.jpg">
           <source media="(min-width: 480px)" srcset="assets\images\image-panna-cotta-tablet.jpg">
@@ -154,12 +154,58 @@
     </div>
     
     <div class="cart-container">
-      <h3 class="cart-heading">Your Cart (0)</h3>
-      <img src="assets/images/illustration-empty-cart.svg" alt="empty cart image" class="empty-cart-img">
-      <span class="cart-subtext">Your added items will appear here</span>
+      <h3 class="cart-heading">Your Cart (7)</h3>
+      <!-- <img src="assets/images/illustration-empty-cart.svg" alt="empty cart image" class="empty-cart-img">
+      <span class="empty-cart-subtext">Your added items will appear here</span> -->
+      <div class="added-item">
+        <div class="cart-item-price-container">
+          <h4 class="cart-item-heading">Classic Tiramisu</h4>
+          <span class="cart-quantity">1x</span>
+          <span class="cart-item-amount">@ $5.50</span>
+          <span class="cart-item-total">$5.50</span>
+        </div>
+        <button class="cart-remove-item">x</button>
+      </div>
+
+      <hr class="cart-item-divider"/>
+
+      <div class="added-item">
+        <div class="cart-item-price-container">
+          <h4 class="cart-item-heading">Vanilla Bean Creme Brulee</h4>
+          <span class="cart-quantity">4x</span>
+          <span class="cart-item-amount">@ $7.00</span>
+          <span class="cart-item-total">$28.00</span>
+        </div>
+        <button class="cart-remove-item">x</button>
+      </div>
+
+      <hr class="cart-item-divider" />
+
+      <div class="added-item">
+        <div class="cart-item-price-container">
+          <h4 class="cart-item-heading">Vanilla Panna Cotta</h4>
+          <span class="cart-quantity">2x</span>
+          <span class="cart-item-amount">@ $6.50</span>
+          <span class="cart-item-total">$13.00</span>
+        </div>
+        <button class="cart-remove-item">x</button>
+      </div>
+
+      <hr class="cart-item-divider" />
+
+      <div class="order-total-container">
+        <span class="order-total">Order Total</span>
+        <h2 class="order-total-amt">$46.50</h2>
+      </div>
+      <div class="carbon-neutral">
+        <img src="assets/images/icon-carbon-neutral.svg" alt="carbon neutral delivery" class="carbon-neutral-img">
+        <span class="carbon-neutral-text">This is a <strong>carbon-neutral</strong> delivery</strong></span>
+      </div>
+
+    <!-- End Cart Container -->
     </div>
 
-    <!-- End container -->
+    <!-- End main container -->
     </div>
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 

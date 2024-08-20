@@ -69,13 +69,14 @@ h6 {
 .dessert-img {
     width: 20rem;
     border-radius: 1rem;
+    margin-top: 1.4rem;
     margin-bottom: 2.4rem;
 }
 
 .main-heading {
     display: block;
     font-weight: 600;
-    margin-bottom: 1.2rem;
+    font-size: 2.4rem;
     font-family: 'RedHatText-Bold';
 }
 
@@ -117,15 +118,18 @@ h6 {
     display: none;
 }
 
-.adjust-quantity {
+.adjust-quantity, .cart-remove-item {
     background: none;
     color: inherit;
-    border: 1px solid white;
     border-radius: 50%;
-    padding: 0 0.5rem;
     font: inherit;
     cursor: pointer;
     outline: inherit;
+}
+
+.adjust-quantity {
+    border: 1px solid white;
+    padding: 0 0.5rem;
 }
 
 .adjust-quantity:hover {
@@ -171,12 +175,76 @@ h6 {
     margin-bottom: 1rem;
 }
 
-.cart-subtext {
+.empty-cart-subtext {
     display: block;
     text-align: center;
     font-family: 'RedHatText-SemiBold';
     color: hsl(12, 20%, 44%);
     margin-bottom: 1rem;
+}
+
+.added-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.cart-quantity {
+    color: hsl(14, 86%, 42%);
+    font-family: 'RedHatText-Bold';
+    margin-right: 1rem;
+}
+
+.cart-item-amount {
+    margin-right: 0.5rem;
+}
+
+.cart-item-total {
+    font-family: 'RedHatText-SemiBold';
+    color: gray
+}
+
+.cart-remove-item {
+    border: 2px solid gray;
+    height: 1.2rem;
+    width: 1.2rem;
+    text-align: center;
+    line-height: 0.3rem;
+    padding: 0 0 2px 0;
+    align-self: center;
+    color: gray;
+    font-family: 'RedHatText-SemiBold';
+}
+
+.cart-remove-item:hover {
+    color: black;
+    border: 2px solid black;
+}
+
+.cart-item-divider {
+    margin-bottom: 1rem;
+    border: none;
+    border-top: 1px solid lightgray;
+}
+
+.order-total-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.order-total {
+    align-self: center;
+}
+
+.order-total-amt {
+    font-family: 'RedHatText-Bold';
+}
+
+.carbon-neutral {
+}
+
+.carbon-neutral-img {
+    display: inline;
 }
 
 .attribution {

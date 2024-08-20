@@ -1,6 +1,20 @@
 const items = document.getElementsByClassName('dessert-item');
-console.log(items);
+const addCartLinks = document.getElementsByClassName('add-cart');
 
-document.addEventListener('DOMContentLoaded', (e) => {
-    console.log("dom loaded")
-})
+function ready() {
+    console.log(addCartLinks);
+
+    for (let i of items){
+        console.log(i.dataset.item)
+    }
+}
+
+if (document.readyState === "loading") {
+    // Loading hasn't finished yet
+    document.addEventListener("DOMContentLoaded", function(e) {
+        ready()
+    });
+} else {
+    // `DOMContentLoaded` has already run
+    ready()
+}
