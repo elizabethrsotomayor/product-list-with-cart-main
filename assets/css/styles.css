@@ -1,8 +1,6 @@
 @font-face {
     font-family: 'RedHatText';
     src: url('../fonts/static/RedHatText-Regular.ttf') format('truetype'),
-        url('../fonts/static/RedHatText-Bold.ttf') format('truetype'),
-        url('../fonts/static/RedHatText-SemiBold.ttf') format('truetype'),
         url('../fonts/RedHatText-Italic-VariableFont_wght.ttf') format('truetype'),
         url('../fonts/RedHatText-VariableFont_wght.ttf') format('truetype')
 }
@@ -118,6 +116,10 @@ h6 {
     display: none;
 }
 
+/* #waffle {
+    border: 2px solid hsl(14, 86%, 42%)
+} */
+
 .adjust-quantity, .cart-remove-item {
     background: none;
     color: inherit;
@@ -155,12 +157,14 @@ h6 {
     font-family: "RedHatText-SemiBold";
 }
 
-.cart-container {
+#cart-container {
     background-color: white;
     padding: 1.4rem;
     border-radius: 1rem;
     height: 30%;
-    width: 20vw;
+    width: 25vw;
+    display: flex;
+    flex-direction: column;
 }
 
 .cart-heading {
@@ -241,10 +245,31 @@ h6 {
 }
 
 .carbon-neutral {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    background-color: hsl(13, 31%, 94%);
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
 }
 
 .carbon-neutral-img {
     display: inline;
+}
+
+.confirm-order {
+    border: none;
+    background-color: hsl(14, 86%, 42%);
+    color: white;
+    border-radius: 5rem;
+    padding: 1rem 0;
+    font-family: 'RedHatText-SemiBold';
+}
+
+.confirm-order:hover {
+    background-color: hsl(14, 83%, 32%);
 }
 
 .attribution {

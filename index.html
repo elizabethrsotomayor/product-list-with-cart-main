@@ -22,14 +22,14 @@
         <picture class="dessert-img">
           <source media="(min-width: 900px)" srcset="assets\images\image-waffle-desktop.jpg">
           <source media="(min-width: 480px)" srcset="assets\images\image-waffle-tablet.jpg">
-          <img src="assets\images\image-waffle-mobile.jpg" alt="waffle image" class="dessert-img">
+          <img src="assets\images\image-waffle-mobile.jpg" alt="waffle image" class="dessert-img" id="waffle">
         </picture>
         <span class="dessert-type">Waffle</span>
         <h2 class="dessert-heading">Waffle with Berries</h2>
         <span class="price">$6.50</span>
-        <a class="add-cart" href="#"><span class="material-symbols-outlined">
+        <button class="add-cart" data-item="waffle"><span class="material-symbols-outlined">
           add_shopping_cart
-        </span>Add to Cart</a>
+        </span>Add to Cart</button>
         <div class="active-state">
           <button class="adjust-quantity" id="decrement">-</button>
           <span class="quantity">1</span>
@@ -41,123 +41,163 @@
         <picture class="dessert-img">
           <source media="(min-width: 900px)" srcset="assets\images\image-creme-brulee-desktop.jpg">
           <source media="(min-width: 480px)" srcset="assets\images\image-creme-brulee-tablet.jpg">
-          <img src="assets\images\image-creme-brulee-mobile.jpg" alt="creme brulee image" class="dessert-img">
+          <img src="assets\images\image-creme-brulee-mobile.jpg" alt="creme brulee image" class="dessert-img" id="creme-brulee">
         </picture>
         <span class="dessert-type">Crème Brûlée</span>
         <h2 class="dessert-heading">Vanilla Bean Crème Brûlée</h2>
         <span class="price">$7.00</span>
-        <a class="add-cart" href="#"><span class="material-symbols-outlined">
+        <button class="add-cart" data-item="creme-brulee"><span class="material-symbols-outlined">
           add_shopping_cart
-        </span>Add to Cart</a>
+        </span>Add to Cart</button>
+        <div class="active-state">
+          <button class="adjust-quantity" id="decrement">-</button>
+          <span class="quantity">1</span>
+          <button class="adjust-quantity" id="increment">+</button>
+        </div>
       </div>
         
       <div class="dessert-item" data-item="macaron">
         <picture class="dessert-img">
           <source media="(min-width: 900px)" srcset="assets\images\image-macaron-desktop.jpg">
           <source media="(min-width: 480px)" srcset="assets\images\image-macaron-tablet.jpg">
-          <img src="assets\images\image-macaron-mobile.jpg" alt="macaron image" class="dessert-img">
+          <img src="assets\images\image-macaron-mobile.jpg" alt="macaron image" class="dessert-img" id="macaron">
         </picture>
         <span class="dessert-type">Macaron</span>
         <h2 class="dessert-heading">Macaron Mix of Five</h2>
         <span class="price">$8.00</span>
-        <a class="add-cart" href="#"><span class="material-symbols-outlined">
+        <button class="add-cart" data-item="macaron"><span class="material-symbols-outlined">
           add_shopping_cart
-        </span>Add to Cart</a>
+        </span>Add to Cart</button>
+        <div class="active-state">
+          <button class="adjust-quantity" id="decrement">-</button>
+          <span class="quantity">1</span>
+          <button class="adjust-quantity" id="increment">+</button>
+        </div>
       </div>
       
       <div class="dessert-item" data-item="tiramisu">
         <picture class="dessert-img">
           <source media="(min-width: 900px)" srcset="assets\images\image-tiramisu-desktop.jpg">
           <source media="(min-width: 480px)" srcset="assets\images\image-tiramisu-tablet.jpg">
-          <img src="assets\images\image-tiramisu-mobile.jpg" alt="Tiramisu image" class="dessert-img">
+          <img src="assets\images\image-tiramisu-mobile.jpg" alt="Tiramisu image" class="dessert-img" id="tiramisu">
         </picture>
         <span class="dessert-type">Tiramisu</span>
         <h2 class="dessert-heading">Classic Tiramisu</h2>
         <span class="price">$5.50</span>
-        <a class="add-cart" href="#"><span class="material-symbols-outlined">
+        <button class="add-cart" data-item="tiramisu"><span class="material-symbols-outlined">
           add_shopping_cart
-        </span>Add to Cart</a>
+        </span>Add to Cart</button>
+        <div class="active-state">
+          <button class="adjust-quantity" id="decrement">-</button>
+          <span class="quantity">1</span>
+          <button class="adjust-quantity" id="increment">+</button>
+        </div>
       </div>
       
       <div class="dessert-item" data-item="baklava">
         <picture class="dessert-img">
           <source media="(min-width: 900px)" srcset="assets\images\image-baklava-desktop.jpg">
           <source media="(min-width: 480px)" srcset="assets\images\image-baklava-tablet.jpg">
-          <img src="assets\images\image-baklava-mobile.jpg" alt="baklava image" class="dessert-img">
+          <img src="assets\images\image-baklava-mobile.jpg" alt="baklava image" class="dessert-img" id="baklava">
         </picture>
         <span class="dessert-type">Baklava</span>
         <h2 class="dessert-heading">Pistachio Baklava</h2>
         <span class="price">$4.00</span>
-        <a class="add-cart" href="#"><span class="material-symbols-outlined">
+        <button class="add-cart" data-item="baklava"><span class="material-symbols-outlined">
           add_shopping_cart
-        </span>Add to Cart</a>
+        </span>Add to Cart</button>
+        <div class="active-state">
+          <button class="adjust-quantity" id="decrement">-</button>
+          <span class="quantity">1</span>
+          <button class="adjust-quantity" id="increment">+</button>
+        </div>
       </div>
       
       <div class="dessert-item" data-item="lemon-meringue">
         <picture class="dessert-img">
           <source media="(min-width: 900px)" srcset="assets\images\image-meringue-desktop.jpg">
           <source media="(min-width: 480px)" srcset="assets\images\image-meringue-tablet.jpg">
-          <img src="assets\images\image-meringue-mobile.jpg" alt="meringue image" class="dessert-img">
+          <img src="assets\images\image-meringue-mobile.jpg" alt="meringue image" class="dessert-img" id="lemon-meringue">
         </picture>
         <span class="dessert-type">Pie</span>
         <h2 class="dessert-heading">Lemon Meringue Pie</h2>
         <span class="price">$5.00</span>
-        <a class="add-cart" href="#"><span class="material-symbols-outlined">
+        <button class="add-cart" data-item="lemon-meringue"><span class="material-symbols-outlined">
           add_shopping_cart
-        </span>Add to Cart</a>
+        </span>Add to Cart</button>
+        <div class="active-state">
+          <button class="adjust-quantity" id="decrement">-</button>
+          <span class="quantity">1</span>
+          <button class="adjust-quantity" id="increment">+</button>
+        </div>
       </div>
       
       <div class="dessert-item" data-item="red-velvet">
         <picture class="dessert-img">
           <source media="(min-width: 900px)" srcset="assets\images\image-cake-desktop.jpg">
           <source media="(min-width: 480px)" srcset="assets\images\image-cake-tablet.jpg">
-          <img src="assets\images\image-cake-mobile.jpg" alt="cake image" class="dessert-img">
+          <img src="assets\images\image-cake-mobile.jpg" alt="cake image" class="dessert-img" id="red-velvet">
         </picture>
         <span class="dessert-type">Cake</span>
         <h2 class="dessert-heading">Red Velvet Cake</h2>
         <span class="price">$4.50</span>
-        <a class="add-cart" href="#"><span class="material-symbols-outlined">
+        <button class="add-cart" data-item="red-velvet"><span class="material-symbols-outlined">
           add_shopping_cart
-        </span>Add to Cart</a>
+        </span>Add to Cart</button>
+        <div class="active-state">
+          <button class="adjust-quantity" id="decrement">-</button>
+          <span class="quantity">1</span>
+          <button class="adjust-quantity" id="increment">+</button>
+        </div>
       </div>
       
       <div class="dessert-item" data-item="brownie">
         <picture class="dessert-img">
           <source media="(min-width: 900px)" srcset="assets\images\image-brownie-desktop.jpg">
           <source media="(min-width: 480px)" srcset="assets\images\image-brownie-tablet.jpg">
-          <img src="assets\images\image-brownie-mobile.jpg" alt="brownie image" class="dessert-img">
+          <img src="assets\images\image-brownie-mobile.jpg" alt="brownie image" class="dessert-img" id="brownie">
         </picture>
         <span class="dessert-type">Brownie</span>
         <h2 class="dessert-heading">Salted Caramel Brownie</h2>
         <span class="price">$4.50</span>
-        <a class="add-cart" href="#"><span class="material-symbols-outlined">
+        <button class="add-cart" data-item="brownie"><span class="material-symbols-outlined">
           add_shopping_cart
-        </span>Add to Cart</a>
+        </span>Add to Cart</button>
+        <div class="active-state">
+          <button class="adjust-quantity" id="decrement">-</button>
+          <span class="quantity">1</span>
+          <button class="adjust-quantity" id="increment">+</button>
+        </div>
       </div>
       
       <div class="dessert-item" data-item="panna-cotta">
         <picture>
           <source media="(min-width: 900px)" srcset="assets\images\image-panna-cotta-desktop.jpg">
           <source media="(min-width: 480px)" srcset="assets\images\image-panna-cotta-tablet.jpg">
-          <img src="assets\images\image-panna-cotta-mobile.jpg" alt="panna-cotta image" class="dessert-img">
+          <img src="assets\images\image-panna-cotta-mobile.jpg" alt="panna-cotta image" class="dessert-img" id="panna-cotta">
         </picture>
         <span class="dessert-type">Panna Cotta</span>
         <h2 class="dessert-heading">Vanilla Panna Cotta</h2>
         <span class="price">$6.50</span>
-        <a class="add-cart" href="#"><span class="material-symbols-outlined">
+        <button class="add-cart" data-item="panna-cotta"><span class="material-symbols-outlined">
           add_shopping_cart
-        </span>Add to Cart</a>
+        </span>Add to Cart</button>
+        <div class="active-state">
+          <button class="adjust-quantity" id="decrement">-</button>
+          <span class="quantity">1</span>
+          <button class="adjust-quantity" id="increment">+</button>
+        </div>
       </div>
     <!-- End grid -->
     </div>
     <!-- End wrapper -->
     </div>
     
-    <div class="cart-container">
-      <h3 class="cart-heading">Your Cart (7)</h3>
-      <!-- <img src="assets/images/illustration-empty-cart.svg" alt="empty cart image" class="empty-cart-img">
-      <span class="empty-cart-subtext">Your added items will appear here</span> -->
-      <div class="added-item">
+    <div id="cart-container">
+      <h3 class="cart-heading">Your Cart (0)</h3>
+      <img src="assets/images/illustration-empty-cart.svg" alt="empty cart image" class="empty-cart-img">
+      <span class="empty-cart-subtext">Your added items will appear here</span>
+      <!-- <div class="added-item">
         <div class="cart-item-price-container">
           <h4 class="cart-item-heading">Classic Tiramisu</h4>
           <span class="cart-quantity">1x</span>
@@ -201,6 +241,7 @@
         <img src="assets/images/icon-carbon-neutral.svg" alt="carbon neutral delivery" class="carbon-neutral-img">
         <span class="carbon-neutral-text">This is a <strong>carbon-neutral</strong> delivery</strong></span>
       </div>
+      <button type="submit" class="confirm-order">Confirm Order</button> -->
 
     <!-- End Cart Container -->
     </div>
