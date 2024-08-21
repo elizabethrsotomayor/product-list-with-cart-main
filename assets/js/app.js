@@ -71,12 +71,15 @@ function applyActiveState(item){
 
 function constructAddedItem(item){
     // Update the cart heading and remove the placeholder image and subtext
-    heading.innerHTML = `<h3 class="cart-heading">Your Cart (${cart.length+1})</h3>`
+    heading.innerHTML = `<h3 class="cart-heading">Your Cart (${cart.length})</h3>`
     emptyCartImg.style.display = "none";
     subtext.style.display = "none";
     
-    // Get the object from the productsList array to find the name
+    // Get the object from the productsList array to find the name and price
     let prod = productsList.find(o => o.product === item);
+
+    // Get the object from the cart array to find the quantity
+    let cartItem = cart.find(i => i.product === item);
     
     console.log(cart);
     
@@ -89,7 +92,7 @@ function constructAddedItem(item){
 //           <span class="cart-item-total">$5.50</span>
 //         </div>
 //         <button class="cart-remove-item">x</button>
-//       </div>
+//     </div>
 
 //       <hr class="cart-item-divider"/>
 
@@ -106,11 +109,20 @@ function constructAddedItem(item){
 
     const cartQuantity = document.createElement('span');
     cartQuantity.setAttribute("class", "cart-quantity");
-    // cartQuantity.innerHTML = cartItem.quantity;
+    cartQuantity.innerHTML = cartItem.quantity + "x";
     itemPriceContainer.appendChild(cartQuantity);
+
+    const cartItemAmt = document.createElement('span');
+    cartItemAmt.setAttribute("class", "cart-item-amount");
+    cartItemAmt.innerHTML = `@ $${prod.price}`
+    itemPriceContainer.appendChild(cartItemAmt);
+
+    const cartItemTotal = document.createElement('span');
+    cartItemTotal.setAttribute("class", "cart-item-total");
+    cartItemTotal.innerHTML = `$${cartItem.quantity * prod.price}`;
+    itemPriceContainer.appendChild(cartItemTotal);
     
     addedItemDiv.appendChild(itemPriceContainer);
-
 
     frag.append(addedItemDiv);
     cartContainer.append(frag);
@@ -129,10 +141,15 @@ function decrement(item){
 function addToCart(item) {
     for (let i of productsList) {
         if (i.product === item && !cart.includes(i)) {
-            applyActiveState(item);
-            constructAddedItem(item);
+            // Product gets added to the cart array
             cart.push(i);
-            i.quantity++;
+
+            // Find the cart item and increase quantity in cart when added to cart
+            let cartItem = cart.find(o => o.product === i.product);
+            cartItem.quantity++;
+
+            // Construct the item in the cart container
+            constructAddedItem(item);
         } 
 
         // else if (i.product === item && cart.includes(i)) {
