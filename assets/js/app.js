@@ -84,17 +84,15 @@ function constructAddedItem(item){
     console.log(cart);
     
     // Construct the item and append to fragment, then append fragment to cart container
-//   <div class="added-item">
-//         <div class="cart-item-price-container">
-//           <h4 class="cart-item-heading">Classic Tiramisu</h4>
-//           <span class="cart-quantity">1x</span>
-//           <span class="cart-item-amount">@ $5.50</span>
-//           <span class="cart-item-total">$5.50</span>
-//         </div>
-//         <button class="cart-remove-item">x</button>
-//     </div>
-
-//       <hr class="cart-item-divider"/>
+    //<div class="order-total-container">
+    //     <span class="order-total">Order Total</span>
+    //     <h2 class="order-total-amt">$46.50</h2>
+    //   </div>
+    //   <div class="carbon-neutral">
+    //     <img src="assets/images/icon-carbon-neutral.svg" alt="carbon neutral delivery" class="carbon-neutral-img">
+    //     <span class="carbon-neutral-text">This is a <strong>carbon-neutral</strong> delivery</strong></span>
+    //   </div>
+    //   <button type="submit" class="confirm-order">Confirm Order</button>
 
     const addedItemDiv = document.createElement('div');
     addedItemDiv.setAttribute("class", "added-item");
@@ -114,17 +112,27 @@ function constructAddedItem(item){
 
     const cartItemAmt = document.createElement('span');
     cartItemAmt.setAttribute("class", "cart-item-amount");
-    cartItemAmt.innerHTML = `@ $${prod.price}`
+    cartItemAmt.innerHTML = `@ $${(Math.round((prod.price) * 100) / 100).toFixed(2)}`
     itemPriceContainer.appendChild(cartItemAmt);
 
     const cartItemTotal = document.createElement('span');
     cartItemTotal.setAttribute("class", "cart-item-total");
-    cartItemTotal.innerHTML = `$${cartItem.quantity * prod.price}`;
+    cartItemTotal.innerHTML = `$${(Math.round((cartItem.quantity * prod.price) * 100) / 100).toFixed(2)}`;
     itemPriceContainer.appendChild(cartItemTotal);
-    
+
+    const removeItem = document.createElement('button');
+    removeItem.innerHTML = "x"
+    removeItem.setAttribute("class", "cart-remove-item");
+
+    const hr = document.createElement("hr");
+    hr.setAttribute("class", "cart-item-divider");
+
     addedItemDiv.appendChild(itemPriceContainer);
+    addedItemDiv.appendChild(removeItem);
 
     frag.append(addedItemDiv);
+    frag.append(hr);
+
     cartContainer.append(frag);
 }
 
