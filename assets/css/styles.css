@@ -165,6 +165,7 @@ h6 {
     width: 25vw;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .cart-heading {
@@ -266,10 +267,19 @@ h6 {
     border-radius: 5rem;
     padding: 1rem 0;
     font-family: 'RedHatText-SemiBold';
+    width: 100%;
 }
 
 .confirm-order:hover {
     background-color: hsl(14, 83%, 32%);
+}
+
+.totalorder-confirm-container {
+    position: absolute;
+    bottom: 0;
+    width: 90%;
+    margin-bottom: 1rem;
+    display: none;
 }
 
 .attribution {

@@ -71,7 +71,7 @@ function applyActiveState(item){
 
 function constructAddedItem(item){
     // Update the cart heading and remove the placeholder image and subtext
-    heading.innerHTML = `<h3 class="cart-heading">Your Cart (${cart.length})</h3>`
+    heading.innerText = `Your Cart (${cart.length})`
     emptyCartImg.style.display = "none";
     subtext.style.display = "none";
     
@@ -81,19 +81,7 @@ function constructAddedItem(item){
     // Get the object from the cart array to find the quantity
     let cartItem = cart.find(i => i.product === item);
     
-    console.log(cart);
-    
     // Construct the item and append to fragment, then append fragment to cart container
-    //<div class="order-total-container">
-    //     <span class="order-total">Order Total</span>
-    //     <h2 class="order-total-amt">$46.50</h2>
-    //   </div>
-    //   <div class="carbon-neutral">
-    //     <img src="assets/images/icon-carbon-neutral.svg" alt="carbon neutral delivery" class="carbon-neutral-img">
-    //     <span class="carbon-neutral-text">This is a <strong>carbon-neutral</strong> delivery</strong></span>
-    //   </div>
-    //   <button type="submit" class="confirm-order">Confirm Order</button>
-
     const addedItemDiv = document.createElement('div');
     addedItemDiv.setAttribute("class", "added-item");
 
@@ -133,7 +121,26 @@ function constructAddedItem(item){
     frag.append(addedItemDiv);
     frag.append(hr);
 
-    cartContainer.append(frag);
+    cartContainer.appendChild(frag);
+}
+
+function doGrandTotal() {
+    // Compute the total and always round to two decimal places
+    let total = 0;
+    cart.forEach(element => {
+        total += element.price * element.quantity;        
+    });
+
+    total = (Math.round(total * 100) / 100).toFixed(2);
+    
+    // Make the total order container visible and add padding to cart container to prevent overlap
+    let totalOrderContainer = document.getElementsByClassName("totalorder-confirm-container")[0];
+    totalOrderContainer.style.display = "inline-block";
+    cartContainer.style.paddingBottom = "12rem";
+
+    // Change the value of the order total heading to reflect the total value
+    let orderAmt = document.getElementsByClassName("order-total-amt");
+    orderAmt[0].innerText = `$${total}`;
 }
 
 function increment(item){
@@ -158,6 +165,9 @@ function addToCart(item) {
 
             // Construct the item in the cart container
             constructAddedItem(item);
+
+            // Calculate and show the grand total
+            doGrandTotal();
         } 
 
         // else if (i.product === item && cart.includes(i)) {
@@ -165,7 +175,6 @@ function addToCart(item) {
         //     cartIdx.quantity++;
         // }
     }
-    console.log(cart);
 }
 
 function ready() {
