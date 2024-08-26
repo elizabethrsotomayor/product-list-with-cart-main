@@ -65,8 +65,20 @@ let productsList = [
     },
 ]
 
-function applyActiveState(item){
-    console.log(item);
+function updateAddedItem(item) {
+    let cartIdx = cart.find(x => x.product === item);
+
+    // Change the value of the span to reflect the change
+    let itemDiv = document.querySelectorAll(`[data-item~=${item}]`)[0];
+    let span = itemDiv.querySelector(".active-state span");
+    span.innerText = cartIdx.quantity;
+
+    // Change the value of the item in the cart
+    let cartItem = document.getElementById(item);
+    cartItem.querySelector(".cart-quantity").innerText = `${cartIdx.quantity}x`;
+    
+    let itemTotal = (Math.round((cartIdx.quantity * cartIdx.price) * 100) / 100).toFixed(2);
+    cartItem.querySelector(".cart-item-total").innerText = `$${itemTotal}`;
 }
 
 function constructAddedItem(item){
@@ -84,6 +96,9 @@ function constructAddedItem(item){
     // Construct the item and append to fragment, then append fragment to cart container
     const addedItemDiv = document.createElement('div');
     addedItemDiv.setAttribute("class", "added-item");
+
+    // Set ID of item in cart to reference later to update values
+    addedItemDiv.setAttribute("id", item);
 
     const itemPriceContainer = document.createElement('div');
     itemPriceContainer.setAttribute("class", "cart-item-price-container");
@@ -124,6 +139,30 @@ function constructAddedItem(item){
     cartContainer.appendChild(frag);
 }
 
+function applyActiveState(item){
+    // Obtain the item container and append the active state div before the end
+    let itemDiv = document.querySelectorAll(`[data-item~=${item}]`)[0];
+    let html = `<div class="active-state">
+          <button class="adjust-quantity decrement">-</button>
+          <span class="quantity">1</span>
+          <button class="adjust-quantity increment">+</button>
+        </div>`
+
+    itemDiv.insertAdjacentHTML('beforeend', html);
+
+    // Apply selected state to item img
+    let itemImg = itemDiv.querySelectorAll(".dessert-img")[1];
+    itemImg.style.border = "2px solid hsl(14, 86%, 42%)";
+    
+    // Event listeners for increment/decrement buttons
+    let activeStateItem = itemDiv.querySelectorAll(".active-state")[0];
+    const incrementBtn = activeStateItem.querySelectorAll("button")[1];
+    const decrementBtn = activeStateItem.querySelectorAll("button")[0];
+
+    incrementBtn.addEventListener("click", () => increment(item));
+    decrementBtn.addEventListener("click", () => decrement(item));
+}
+
 function doGrandTotal() {
     // Compute the total and always round to two decimal places
     let total = 0;
@@ -143,14 +182,29 @@ function doGrandTotal() {
     orderAmt[0].innerText = `$${total}`;
 }
 
-function increment(item){
+function removeItem(item) {
+    console.log(item);
+}
+
+function increment(item){    
     let cartIdx = cart.find(x => x.product === item);
     cartIdx.quantity++;
+
+    updateAddedItem(item);
+    doGrandTotal();
 }
 
 function decrement(item){
     let cartIdx = cart.find(x => x.product === item);
     cartIdx.quantity--;
+
+    if (cartIdx.quantity === 0) {
+        console.log("item at 0");
+        removeItem(item);
+    }
+    
+    updateAddedItem(item);
+    doGrandTotal();
 }
 
 function addToCart(item) {
@@ -166,14 +220,12 @@ function addToCart(item) {
             // Construct the item in the cart container
             constructAddedItem(item);
 
+            // Apply active state to the item and increment/decrement buttons
+            applyActiveState(item);
+
             // Calculate and show the grand total
             doGrandTotal();
-        } 
-
-        // else if (i.product === item && cart.includes(i)) {
-        //     let cartIdx = cart.find(x => x.product === item);
-        //     cartIdx.quantity++;
-        // }
+        }
     }
 }
 
