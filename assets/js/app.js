@@ -180,10 +180,33 @@ function doGrandTotal() {
     // Change the value of the order total heading to reflect the total value
     let orderAmt = document.getElementsByClassName("order-total-amt");
     orderAmt[0].innerText = `$${total}`;
+
+    // Change the cart heading to reflect the # of items in cart
+    let cartHeading = document.getElementsByClassName("cart-heading")[0];
+    let numItems = cart.reduce((total, obj) => obj.quantity + total,0)
+    cartHeading.innerText = `Your Cart (${numItems})`
 }
 
 function removeItem(item) {
-    console.log(item);
+    const itemDiv = document.querySelectorAll(`[data-item~=${item}]`)[0];
+    const active = itemDiv.querySelectorAll(".active-state")[0];
+    let itemImg = itemDiv.querySelectorAll(".dessert-img")[1];
+    itemImg.style.border = "";
+
+    // Remove the active class div from the item
+    active.parentNode.removeChild(active);
+
+    // Remove the item from the cart array
+    cart = cart.filter(function(el) { return el.product != item; }); 
+
+    // Remove the item from the cart div
+    let cartItem = document.getElementById(item);
+    let hr = cartItem.nextElementSibling;
+    
+    hr.parentNode.removeChild(hr);
+    cartItem.parentNode.removeChild(cartItem);
+
+    doGrandTotal();
 }
 
 function increment(item){    
@@ -201,10 +224,11 @@ function decrement(item){
     if (cartIdx.quantity === 0) {
         console.log("item at 0");
         removeItem(item);
+    } else {
+        updateAddedItem(item);
+        doGrandTotal();
     }
     
-    updateAddedItem(item);
-    doGrandTotal();
 }
 
 function addToCart(item) {
