@@ -136,9 +136,7 @@ function updateAddedItem(item) {
 }
 
 function constructAddedItem(item){
-    // Update the cart heading and remove the placeholder image and subtext
-    console.log(cart);
-    
+    // Update the cart heading and remove the placeholder image and subtext    
     heading.innerText = `Your Cart (${cart.length})`
     emptyCartImg.style.display = "none";
     subtext.style.display = "none";
@@ -266,6 +264,14 @@ function addToCart(item) {
             doGrandTotal();
         }
     }
+}
+
+function orderConfirm() {
+  document.getElementById("overlay").style.display = "block";
+}
+
+function off() {
+  document.getElementById("overlay").style.display = "none";
 }
 
 function ready() {

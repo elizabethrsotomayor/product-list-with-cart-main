@@ -13,6 +13,7 @@
 </head>
 <body>
 
+  <div id="overlay" onclick="off()"></div>
   <div class="container">
   <div class="dessert-items-wrapper">
     <h1 class="main-heading">Desserts</h1>
@@ -203,7 +204,7 @@
           <img src="assets/images/icon-carbon-neutral.svg" alt="carbon neutral delivery" class="carbon-neutral-img">
           <span class="carbon-neutral-text">This is a <strong>carbon-neutral</strong> delivery</strong></span>
         </div>
-        <button type="submit" class="confirm-order">Confirm Order</button>
+        <button type="submit" class="confirm-order" onclick="orderConfirm()">Confirm Order</button>
       </div>
 
     <!-- End Cart Container -->
