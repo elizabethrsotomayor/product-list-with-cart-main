@@ -65,104 +65,6 @@ let productsList = [
     },
 ]
 
-function updateAddedItem(item) {
-    let cartIdx = cart.find(x => x.product === item);
-
-    // Change the value of the span to reflect the change
-    let itemDiv = document.querySelectorAll(`[data-item~=${item}]`)[0];
-    let span = itemDiv.querySelector(".active-state span");
-    span.innerText = cartIdx.quantity;
-
-    // Change the value of the item in the cart
-    let cartItem = document.getElementById(item);
-    cartItem.querySelector(".cart-quantity").innerText = `${cartIdx.quantity}x`;
-    
-    let itemTotal = (Math.round((cartIdx.quantity * cartIdx.price) * 100) / 100).toFixed(2);
-    cartItem.querySelector(".cart-item-total").innerText = `$${itemTotal}`;
-}
-
-function constructAddedItem(item){
-    // Update the cart heading and remove the placeholder image and subtext
-    heading.innerText = `Your Cart (${cart.length})`
-    emptyCartImg.style.display = "none";
-    subtext.style.display = "none";
-    
-    // Get the object from the productsList array to find the name and price
-    let prod = productsList.find(o => o.product === item);
-
-    // Get the object from the cart array to find the quantity
-    let cartItem = cart.find(i => i.product === item);
-    
-    // Construct the item and append to fragment, then append fragment to cart container
-    const addedItemDiv = document.createElement('div');
-    addedItemDiv.setAttribute("class", "added-item");
-
-    // Set ID of item in cart to reference later to update values
-    addedItemDiv.setAttribute("id", item);
-
-    const itemPriceContainer = document.createElement('div');
-    itemPriceContainer.setAttribute("class", "cart-item-price-container");
-    
-    const itemHeading = document.createElement('h4');
-    itemHeading.setAttribute("class", "cart-item-heading");
-    itemHeading.innerText = prod.name;
-    itemPriceContainer.appendChild(itemHeading);
-
-    const cartQuantity = document.createElement('span');
-    cartQuantity.setAttribute("class", "cart-quantity");
-    cartQuantity.innerHTML = cartItem.quantity + "x";
-    itemPriceContainer.appendChild(cartQuantity);
-
-    const cartItemAmt = document.createElement('span');
-    cartItemAmt.setAttribute("class", "cart-item-amount");
-    cartItemAmt.innerHTML = `@ $${(Math.round((prod.price) * 100) / 100).toFixed(2)}`
-    itemPriceContainer.appendChild(cartItemAmt);
-
-    const cartItemTotal = document.createElement('span');
-    cartItemTotal.setAttribute("class", "cart-item-total");
-    cartItemTotal.innerHTML = `$${(Math.round((cartItem.quantity * prod.price) * 100) / 100).toFixed(2)}`;
-    itemPriceContainer.appendChild(cartItemTotal);
-
-    const removeItem = document.createElement('button');
-    removeItem.innerHTML = "x"
-    removeItem.setAttribute("class", "cart-remove-item");
-
-    const hr = document.createElement("hr");
-    hr.setAttribute("class", "cart-item-divider");
-
-    addedItemDiv.appendChild(itemPriceContainer);
-    addedItemDiv.appendChild(removeItem);
-
-    frag.append(addedItemDiv);
-    frag.append(hr);
-
-    cartContainer.appendChild(frag);
-}
-
-function applyActiveState(item){
-    // Obtain the item container and append the active state div before the end
-    let itemDiv = document.querySelectorAll(`[data-item~=${item}]`)[0];
-    let html = `<div class="active-state">
-          <button class="adjust-quantity decrement">-</button>
-          <span class="quantity">1</span>
-          <button class="adjust-quantity increment">+</button>
-        </div>`
-
-    itemDiv.insertAdjacentHTML('beforeend', html);
-
-    // Apply selected state to item img
-    let itemImg = itemDiv.querySelectorAll(".dessert-img")[1];
-    itemImg.style.border = "2px solid hsl(14, 86%, 42%)";
-    
-    // Event listeners for increment/decrement buttons
-    let activeStateItem = itemDiv.querySelectorAll(".active-state")[0];
-    const incrementBtn = activeStateItem.querySelectorAll("button")[1];
-    const decrementBtn = activeStateItem.querySelectorAll("button")[0];
-
-    incrementBtn.addEventListener("click", () => increment(item));
-    decrementBtn.addEventListener("click", () => decrement(item));
-}
-
 function doGrandTotal() {
     // Compute the total and always round to two decimal places
     let total = 0;
@@ -213,8 +115,114 @@ function removeItem(item) {
     
     hr.parentNode.removeChild(hr);
     cartItem.parentNode.removeChild(cartItem);
-
+    
     doGrandTotal();
+}
+
+function updateAddedItem(item) {
+    let cartIdx = cart.find(x => x.product === item);
+
+    // Change the value of the span to reflect the change
+    let itemDiv = document.querySelectorAll(`[data-item~=${item}]`)[0];
+    let span = itemDiv.querySelector(".active-state span");
+    span.innerText = cartIdx.quantity;
+
+    // Change the value of the item in the cart
+    let cartItem = document.getElementById(item);
+    cartItem.querySelector(".cart-quantity").innerText = `${cartIdx.quantity}x`;
+    
+    let itemTotal = (Math.round((cartIdx.quantity * cartIdx.price) * 100) / 100).toFixed(2);
+    cartItem.querySelector(".cart-item-total").innerText = `$${itemTotal}`;
+}
+
+function constructAddedItem(item){
+    // Update the cart heading and remove the placeholder image and subtext
+    console.log(cart);
+    
+    heading.innerText = `Your Cart (${cart.length})`
+    emptyCartImg.style.display = "none";
+    subtext.style.display = "none";
+    
+    // Get the object from the productsList array to find the name and price
+    let prod = productsList.find(o => o.product === item);
+
+    // Get the object from the cart array to find the quantity
+    let cartItem = cart.find(i => i.product === item);
+    
+    // Construct the item and append to fragment, then append fragment to cart container
+    const addedItemDiv = document.createElement('div');
+    addedItemDiv.setAttribute("class", "added-item");
+
+    // Set ID of item in cart to reference later to update values
+    addedItemDiv.setAttribute("id", item);
+
+    const itemPriceContainer = document.createElement('div');
+    itemPriceContainer.setAttribute("class", "cart-item-price-container");
+    
+    const itemHeading = document.createElement('h4');
+    itemHeading.setAttribute("class", "cart-item-heading");
+    itemHeading.innerText = prod.name;
+    itemPriceContainer.appendChild(itemHeading);
+
+    const cartQuantity = document.createElement('span');
+    cartQuantity.setAttribute("class", "cart-quantity");
+    cartQuantity.innerHTML = cartItem.quantity + "x";
+    itemPriceContainer.appendChild(cartQuantity);
+
+    const cartItemAmt = document.createElement('span');
+    cartItemAmt.setAttribute("class", "cart-item-amount");
+    cartItemAmt.innerHTML = `@ $${(Math.round((prod.price) * 100) / 100).toFixed(2)}`
+    itemPriceContainer.appendChild(cartItemAmt);
+
+    const cartItemTotal = document.createElement('span');
+    cartItemTotal.setAttribute("class", "cart-item-total");
+    cartItemTotal.innerHTML = `$${(Math.round((cartItem.quantity * prod.price) * 100) / 100).toFixed(2)}`;
+    itemPriceContainer.appendChild(cartItemTotal);
+
+    const removeItemBtn = document.createElement('button');
+    removeItemBtn.innerHTML = "x"
+    removeItemBtn.setAttribute("class", "cart-remove-item");
+
+    const hr = document.createElement("hr");
+    hr.setAttribute("class", "cart-item-divider");
+
+    addedItemDiv.appendChild(itemPriceContainer);
+    addedItemDiv.appendChild(removeItemBtn);
+
+    removeItemBtn.addEventListener('click', () => {
+        let cartIdx = cart.find(x => x.product === item);
+        cartIdx.quantity = 0;
+        removeItem(item);
+    });
+
+    frag.append(addedItemDiv);
+    frag.append(hr);
+
+    cartContainer.appendChild(frag);
+}
+
+function applyActiveState(item){
+    // Obtain the item container and append the active state div before the end
+    let itemDiv = document.querySelectorAll(`[data-item~=${item}]`)[0];
+    let html = `<div class="active-state">
+          <button class="adjust-quantity decrement">-</button>
+          <span class="quantity">1</span>
+          <button class="adjust-quantity increment">+</button>
+        </div>`
+
+    itemDiv.insertAdjacentHTML('beforeend', html);
+
+    // Apply selected state to item img
+    let itemImg = itemDiv.querySelectorAll(".dessert-img")[1];
+    itemImg.style.border = "2px solid hsl(14, 86%, 42%)";
+    
+    // Event listeners for increment/decrement buttons
+    let activeStateItem = itemDiv.querySelectorAll(".active-state")[0];
+    const incrementBtn = activeStateItem.querySelectorAll("button")[1];
+    const decrementBtn = activeStateItem.querySelectorAll("button")[0];
+
+    incrementBtn.addEventListener("click", () => increment(item));
+    decrementBtn.addEventListener("click", () => decrement(item));
 }
 
 function increment(item){    
@@ -230,7 +238,6 @@ function decrement(item){
     cartIdx.quantity--;
 
     if (cartIdx.quantity === 0) {
-        console.log("item at 0");
         removeItem(item);
     } else {
         updateAddedItem(item);
@@ -262,8 +269,6 @@ function addToCart(item) {
 }
 
 function ready() {
-    // console.log(addCartLinks);
-
     // for (let i of items){
     //     console.log(i.dataset.item);
     // }
