@@ -79,6 +79,7 @@ h6 {
 }
 
 .container {
+    position: relative;
     display: flex;
     gap: 2rem;
     margin: 6rem;
@@ -292,6 +293,32 @@ h6 {
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 2;
+}
+
+.order-confirm-container {
+    position: absolute;
+    background-color: white;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    z-index: 4;
+    left: 35%;
+    top: 15%;
+    border-radius: 2rem;
+}
+
+.order-confirm-check {
+    margin-bottom: 0.5rem;
+}
+
+.order-confirm-heading {
+    font-size: 2rem;
+    font-family: 'RedHatText-Bold';
+}
+
+.order-confirm-subheading {
+    color:#757575;
+    margin-bottom: 1rem;
 }
 
 .attribution {

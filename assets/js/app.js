@@ -211,7 +211,7 @@ function applyActiveState(item){
     itemDiv.insertAdjacentHTML('beforeend', html);
 
     // Apply selected state to item img
-    let itemImg = itemDiv.querySelectorAll(".dessert-img")[1];
+    let itemImg = itemDiv.querySelectorAll(".dessert-img")[1];    
     itemImg.style.border = "2px solid hsl(14, 86%, 42%)";
     
     // Event listeners for increment/decrement buttons
@@ -246,7 +246,7 @@ function decrement(item){
 
 function addToCart(item) {
     for (let i of productsList) {
-        if (i.product === item && !cart.includes(i)) {
+        if (i.product === item && !cart.includes(i)) {            
             // Product gets added to the cart array
             cart.push(i);
 
@@ -271,7 +271,7 @@ function orderConfirm() {
 }
 
 function off() {
-  document.getElementById("overlay").style.display = "none";
+  document.getElementById("overlay").style.display = "none";  
 }
 
 function ready() {
