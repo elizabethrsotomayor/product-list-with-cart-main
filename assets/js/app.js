@@ -185,6 +185,14 @@ function doGrandTotal() {
     let cartHeading = document.getElementsByClassName("cart-heading")[0];
     let numItems = cart.reduce((total, obj) => obj.quantity + total,0)
     cartHeading.innerText = `Your Cart (${numItems})`
+
+    // If # of items in cart is zero, return the placeholder image and text
+    if (cart.length === 0) {
+        emptyCartImg.style.display = "inline-block";
+        subtext.style.display = "inline-block";
+        totalOrderContainer.style.display = "none";
+        cartContainer.style.paddingBottom = "1.4rem";
+    }
 }
 
 function removeItem(item) {
