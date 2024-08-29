@@ -4,6 +4,7 @@ const cartContainer = document.getElementById('cart-container');
 const emptyCartImg = cartContainer.querySelector(".empty-cart-img");
 const subtext = cartContainer.querySelector(".empty-cart-subtext");
 const heading = cartContainer.querySelector(".cart-heading");
+const mainContainer = document.querySelector(".container")
 let frag = new DocumentFragment();
 
 let cart = [];
@@ -13,55 +14,64 @@ let productsList = [
         product: "waffle",
         name: "Waffle with Berries",
         price: 6.50,
-        quantity: 0
+        quantity: 0,
+        src: "waffle"
     },
     {
         product: "creme-brulee",
         name: "Vanilla Bean Crème Brûlée",
         price: 7.00,
         quantity: 0,
+        src: "creme-brulee"
     },
     {
         product: "macaron",
         name: "Macaron Mix of Five",
         price: 8.00,
         quantity: 0,
+        src: "macaron"
     },
     {
         product: "tiramisu",
         name: "Classic Tiramisu",
         price: 5.50,
         quantity: 0,
+        src: "tiramisu"
     },
     {
         product: "baklava",
         name: "Pistachio Baklava",
         price: 4.00,
         quantity: 0,
+        src: "baklava"
     },
     {
         product: "lemon-meringue",
         name: "Lemon Meringue Pie",
         price: 5.00,
         quantity: 0,
+        src: "meringue"
     },
     {
         product: "red-velvet",
         name: "Red Velvet Cake",
         price: 4.50,
         quantity: 0,
+        src: "cake"
     },
     {
         product: "brownie",
         name: "Salted Caramel Brownie",
         price: 5.50,
         quantity: 0,
+        src: "brownie"
     },
     {
         product: "panna-cotta",
         name: "Vanilla Panna Cotta",
         price: 6.50,
         quantity: 0,
+        src: "panna-cotta"
     },
 ]
 
@@ -269,9 +279,81 @@ function addToCart(item) {
 function orderConfirm() {
   document.getElementById("overlay").style.display = "block";
   document.getElementsByClassName("order-confirm-container")[0].style.display = "flex";
-  console.log(frag);
-  console.log(cart);
+    
+  let total = 0;
+    
+  cart.forEach(item => {
+    total += item.price * item.quantity;
+    });
+
+  const itemsList = document.getElementsByClassName("order-confirm-items-list")[0];
   
+  // Construct the items in the confirm modal by looping through the cart and appending to the fragment, then append frag to items list container
+  cart.forEach((item) => {
+    let orderConfirmItem = document.createElement("div");
+    orderConfirmItem.setAttribute("class", "order-confirm-item");
+
+    let img = document.createElement("img");
+    img.setAttribute("src", `assets/images/image-${item.src}-thumbnail.jpg`);
+    img.setAttribute("alt", item.product);
+    img.setAttribute("class", "order-confirm-thumbnail");
+
+    let orderConfirmTitleSubtitle = document.createElement("div");
+    orderConfirmTitleSubtitle.setAttribute("class", "order-confirm-title-subtitle");
+    
+    let itemTitleSpan = document.createElement("span");
+    itemTitleSpan.setAttribute("class", "order-confirm-item-title");
+    itemTitleSpan.innerText = item.name;
+
+    let orderConfirmQuantityPrice = document.createElement("div");
+    orderConfirmQuantityPrice.setAttribute("class", "order-confirm-quantity-price");
+
+    let cartQuantity = document.createElement("span");
+    cartQuantity.setAttribute("class", "cart-quantity");
+    cartQuantity.innerText = `${item.quantity}x`;
+
+    let cartItemAmount = document.createElement("span");
+    cartItemAmount.setAttribute("class", "cart-item-amount");
+    cartItemAmount.innerText = `$${(Math.round((item.price) * 100) / 100).toFixed(2)}`;
+
+    let orderConfirmItemTotal = document.createElement("span");
+    orderConfirmItemTotal.setAttribute("class", "order-confirm-item-total");
+    orderConfirmItemTotal.innerText = `$${(Math.round((item.quantity * item.price) * 100) / 100).toFixed(2)}`;
+
+    let hr = document.createElement("hr");
+    hr.setAttribute("class", "order-confirm-divider");
+
+    orderConfirmQuantityPrice.appendChild(cartQuantity);
+    orderConfirmQuantityPrice.appendChild(cartItemAmount);
+
+    orderConfirmTitleSubtitle.appendChild(itemTitleSpan);
+    orderConfirmTitleSubtitle.appendChild(orderConfirmQuantityPrice);
+
+    orderConfirmItem.appendChild(img);
+    orderConfirmItem.appendChild(orderConfirmTitleSubtitle);
+    orderConfirmItem.appendChild(orderConfirmItemTotal);
+
+    frag.appendChild(orderConfirmItem);
+    frag.appendChild(hr);
+});
+    
+    const orderConfirmTotalContainer = document.createElement("div");
+    orderConfirmTotalContainer.setAttribute("class", "order-confirm-total-container");
+
+    const orderConfirmTotal = document.createElement("span");
+    orderConfirmTotal.setAttribute("class", "order-confirm-total");
+    orderConfirmTotal.innerText = "Order Total";
+
+    const orderConfirmTotalAmt = document.createElement("span");
+    orderConfirmTotalAmt.setAttribute("class", "order-confirm-total-amt");
+    orderConfirmTotalAmt.innerText = `$${(Math.round(total * 100) / 100).toFixed(2)}`
+
+    orderConfirmTotalContainer.appendChild(orderConfirmTotal);
+    orderConfirmTotalContainer.appendChild(orderConfirmTotalAmt);
+
+    frag.appendChild(orderConfirmTotalContainer);
+
+    itemsList.appendChild(frag);
 }
 
 function off() {
@@ -280,10 +362,6 @@ function off() {
 }
 
 function ready() {
-    // for (let i of items){
-    //     console.log(i.dataset.item);
-    // }
-
     // Add event listener to each "add to cart" link
     for (let j of addCartLinks) {
         j.addEventListener('click', () => addToCart(j.dataset.item));
