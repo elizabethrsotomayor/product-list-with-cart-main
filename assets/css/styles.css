@@ -274,6 +274,7 @@ h6 {
     background-color: hsl(14, 83%, 32%);
 }
 
+/* Display order total at the bottom of cart */
 .totalorder-confirm-container {
     position: absolute;
     bottom: 0;
@@ -284,7 +285,7 @@ h6 {
 
 #overlay {
     position: fixed;
-    display: none;
+    /* display: none; */
     width: 100%;
     height: 100%;
     top: 0;
@@ -295,6 +296,7 @@ h6 {
     z-index: 2;
 }
 
+/* Order Confirm container appears on overlay when "Confirm Order" btn clicked */
 .order-confirm-container {
     position: absolute;
     background-color: white;
@@ -302,9 +304,10 @@ h6 {
     display: flex;
     flex-direction: column;
     z-index: 4;
-    left: 35%;
+    left: 30%;
     top: 15%;
     border-radius: 2rem;
+    width: 35vw;
 }
 
 .order-confirm-check {
@@ -319,6 +322,56 @@ h6 {
 .order-confirm-subheading {
     color:#757575;
     margin-bottom: 1rem;
+}
+
+.order-confirm-item {
+    display: flex;
+    gap: 0.5rem;
+    padding: 1.4rem;
+}
+
+.order-confirm-thumbnail {
+    border-radius: 0.5rem;
+}
+
+.order-confirm-items-list {
+    background-color: hsl(13, 31%, 94%);
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+}
+
+.order-confirm-item-title {
+    font-family: 'RedHatText-SemiBold';
+}
+
+.order-confirm-item-total {
+    margin-left: auto;
+    align-self: center;
+    font-size: 1.2rem;
+    font-family: 'RedHatText-SemiBold';
+}
+
+.order-confirm-divider {
+    margin-bottom: 1rem;
+    border: none;
+    border-top: 1px solid lightgray;
+    width: 90%;
+    margin: auto;
+}
+
+.order-confirm-total-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.2rem;
+}
+
+.order-confirm-total {
+    align-self: center;
+}
+
+.order-confirm-total-amt {
+    font-size: 1.4rem;
+    font-family: 'RedHatText-Bold';
 }
 
 .attribution {
