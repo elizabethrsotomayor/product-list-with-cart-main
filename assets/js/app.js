@@ -268,10 +268,15 @@ function addToCart(item) {
 
 function orderConfirm() {
   document.getElementById("overlay").style.display = "block";
+  document.getElementsByClassName("order-confirm-container")[0].style.display = "flex";
+  console.log(frag);
+  console.log(cart);
+  
 }
 
 function off() {
-  document.getElementById("overlay").style.display = "none";  
+  document.getElementById("overlay").style.display = "none";
+  document.getElementsByClassName("order-confirm-container")[0].style.display = "none";  
 }
 
 function ready() {
