@@ -356,9 +356,17 @@ function orderConfirm() {
     itemsList.appendChild(frag);
 }
 
-function off() {
+function resetCart() {
   document.getElementById("overlay").style.display = "none";
-  document.getElementsByClassName("order-confirm-container")[0].style.display = "none";  
+  document.getElementsByClassName("order-confirm-container")[0].style.display = "none";
+  cart = [];
+
+  for(let i of items) {
+    if (i.childNodes.length === 12) {
+        removeItem(i.dataset.item);
+    }
+  }
+  
 }
 
 function ready() {
