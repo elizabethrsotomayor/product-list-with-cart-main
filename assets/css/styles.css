@@ -69,6 +69,21 @@ h6 {
     font-family: "RedHatText-SemiBold";
 }
 
+.active-state {
+    background-color: hsl(14, 86%, 42%);
+    color: white;
+}
+
+.adjust-quantity,
+.cart-remove-item {
+    background: none;
+    color: inherit;
+    border-radius: 50%;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+
 .cart-heading {
     color: hsl(14, 86%, 42%);
     font-size: 1.4rem;
@@ -82,6 +97,48 @@ h6 {
     font-family: 'RedHatText-SemiBold';
     color: hsl(12, 20%, 44%);
     margin-bottom: 1rem;
+}
+
+.carbon-neutral {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    background-color: hsl(13, 31%, 94%);
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+}
+
+.added-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.cart-quantity {
+    color: hsl(14, 86%, 42%);
+    font-family: 'RedHatText-Bold';
+    margin-right: 1rem;
+}
+
+.cart-item-amount {
+    margin-right: 0.5rem;
+}
+
+.cart-item-total {
+    font-family: 'RedHatText-SemiBold';
+    color: gray
+}
+
+.confirm-order {
+    border: none;
+    background-color: hsl(14, 86%, 42%);
+    color: white;
+    border-radius: 5rem;
+    padding: 1rem 0;
+    font-family: 'RedHatText-SemiBold';
+    width: 100%;
 }
 
 @media screen and (min-width: 25rem) {
@@ -139,25 +196,14 @@ h6 {
         background-color: white;
     }
 
-    .active-state {
-        gap: 4rem;
-        background-color: hsl(14, 86%, 42%);
-        color:white;
-    }
-
     /* #waffle {
         border: 2px solid hsl(14, 86%, 42%)
     } */
 
-    .adjust-quantity, .cart-remove-item {
-        background: none;
-        color: inherit;
-        border-radius: 50%;
-        font: inherit;
-        cursor: pointer;
-        outline: inherit;
+    .active-state {
+        gap: 4rem;
     }
-
+    
     .adjust-quantity {
         border: 1px solid white;
         padding: 0 0.5rem;
@@ -190,27 +236,6 @@ h6 {
     .empty-cart-img {
         margin: auto;
         margin-bottom: 1rem;
-    }
-
-    .added-item {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 1rem;
-    }
-
-    .cart-quantity {
-        color: hsl(14, 86%, 42%);
-        font-family: 'RedHatText-Bold';
-        margin-right: 1rem;
-    }
-
-    .cart-item-amount {
-        margin-right: 0.5rem;
-    }
-
-    .cart-item-total {
-        font-family: 'RedHatText-SemiBold';
-        color: gray
     }
 
     .cart-remove-item {
@@ -249,29 +274,8 @@ h6 {
         font-family: 'RedHatText-Bold';
     }
 
-    .carbon-neutral {
-        margin-top: 1rem;
-        display: flex;
-        justify-content: center;
-        gap: 0.5rem;
-        background-color: hsl(13, 31%, 94%);
-        padding: 1rem;
-        border-radius: 1rem;
-        margin-bottom: 1rem;
-    }
-
     .carbon-neutral-img {
         display: inline;
-    }
-
-    .confirm-order {
-        border: none;
-        background-color: hsl(14, 86%, 42%);
-        color: white;
-        border-radius: 5rem;
-        padding: 1rem 0;
-        font-family: 'RedHatText-SemiBold';
-        width: 100%;
     }
 
     .confirm-order:hover {
