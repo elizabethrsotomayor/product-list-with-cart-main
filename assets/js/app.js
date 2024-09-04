@@ -258,11 +258,11 @@ function addToCart(item) {
     for (let i of productsList) {
         if (i.product === item && !cart.includes(i)) {            
             // Product gets added to the cart array
-            cart.push(i);
+            cart.push(i);            
 
-            // Find the cart item and increase quantity in cart when added to cart
+            // Find the cart item and set quantity to 1 when added to cart
             let cartItem = cart.find(o => o.product === i.product);
-            cartItem.quantity++;
+            cartItem.quantity = 1;
 
             // Construct the item in the cart container
             constructAddedItem(item);
@@ -357,15 +357,38 @@ function orderConfirm() {
 }
 
 function resetCart() {
-  document.getElementById("overlay").style.display = "none";
-  document.getElementsByClassName("order-confirm-container")[0].style.display = "none";
-  cart = [];
+    // Remove the overlay background effect
+    document.getElementById("overlay").style.display = "none";
 
-  for(let i of items) {
-    if (i.childNodes.length === 12) {
-        removeItem(i.dataset.item);
+    // Hide the order confirm container div that contains each item
+    document.getElementsByClassName("order-confirm-container")[0].style.display = "none";
+
+    // Reset the cart array
+    cart.length = 0;
+
+    // Remove every item from the previous order in confirm modal
+    document.querySelectorAll(".order-confirm-item").forEach(function(c){
+        c.parentNode.removeChild(c);                
+    });
+
+    // Remove total price from confirm order div modal
+    document.querySelectorAll(".order-confirm-total-container").forEach(function(d){
+        d.parentNode.removeChild(d);        
+    });
+
+    // Remove the dividers from order confirm modal
+    var paras = document.getElementsByClassName('order-confirm-divider');
+
+    while(paras[0]) {
+        paras[0].parentNode.removeChild(paras[0]);
     }
-  }
+    
+    // Loop through each item and remove it if length = 12 (contains active div)
+    for(let i of items) {
+        if (i.childNodes.length === 12) {
+            removeItem(i.dataset.item);
+        }
+    }
   
 }
 
