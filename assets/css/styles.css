@@ -1,3 +1,5 @@
+@import "mobstyles.css" screen and (max-width: 25rem);
+
 @font-face {
     font-family: 'RedHatText';
     src: url('../fonts/static/RedHatText-Regular.ttf') format('truetype'),
@@ -57,96 +59,6 @@ h6 {
     overflow-wrap: break-word;
 }
 
-.desserts-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    column-gap: 1.2rem;
-    row-gap: 1.2rem;
-}
-
-.dessert-img {
-    width: 20rem;
-    border-radius: 1rem;
-    margin-top: 1.4rem;
-    margin-bottom: 2.4rem;
-}
-
-.main-heading {
-    display: block;
-    font-weight: 600;
-    font-size: 2.4rem;
-    font-family: 'RedHatText-Bold';
-}
-
-.container {
-    position: relative;
-    display: flex;
-    gap: 2rem;
-    margin: 6rem;
-}
-
-.dessert-item {
-    position: relative;
-}
-
-.add-cart, .active-state {
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-    font-weight: 600;
-    font-size: 1.2rem;
-    border: 1px solid hsl(14, 86%, 42%);
-    border-radius: 2rem;
-    width: 15rem;
-    padding: 1rem;
-    position: absolute;
-    bottom: 25%;
-    left: 10%;
-}
-
-.add-cart {
-    gap: 0.3rem;
-    color: #000;
-    background-color: white;
-}
-
-.active-state {
-    gap: 4rem;
-    background-color: hsl(14, 86%, 42%);
-    color:white;
-}
-
-/* #waffle {
-    border: 2px solid hsl(14, 86%, 42%)
-} */
-
-.adjust-quantity, .cart-remove-item {
-    background: none;
-    color: inherit;
-    border-radius: 50%;
-    font: inherit;
-    cursor: pointer;
-    outline: inherit;
-}
-
-.adjust-quantity {
-    border: 1px solid white;
-    padding: 0 0.5rem;
-}
-
-.adjust-quantity:hover {
-    background-color: white;
-    color:hsl(14, 86%, 42%);
-}
-
-.add-cart:hover {
-    color: hsl(14, 86%, 42%)
-}
-
-.material-symbols-outlined {
-    color: hsl(14, 86%, 42%)
-}
-
 .dessert-type {
     color: #757575;
 }
@@ -157,27 +69,11 @@ h6 {
     font-family: "RedHatText-SemiBold";
 }
 
-#cart-container {
-    background-color: white;
-    padding: 1.4rem;
-    border-radius: 1rem;
-    height: 30%;
-    width: 25vw;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-}
-
 .cart-heading {
     color: hsl(14, 86%, 42%);
     font-size: 1.4rem;
     font-family: 'RedHatText-Bold';
     margin-bottom: 0.75rem;
-}
-
-.empty-cart-img {
-    margin: auto;
-    margin-bottom: 1rem;
 }
 
 .empty-cart-subtext {
@@ -188,198 +84,308 @@ h6 {
     margin-bottom: 1rem;
 }
 
-.added-item {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 1rem;
+@media screen and (min-width: 25rem) {
+
+    .desserts-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 1.2rem;
+        row-gap: 1.2rem;
+    }
+
+    .dessert-img {
+        width: 20rem;
+        border-radius: 1rem;
+        margin-top: 1.4rem;
+        margin-bottom: 2.4rem;
+    }
+
+    .main-heading {
+        display: block;
+        font-weight: 600;
+        font-size: 2.4rem;
+        font-family: 'RedHatText-Bold';
+    }
+
+    .container {
+        position: relative;
+        display: flex;
+        gap: 2rem;
+        margin: 6rem;
+    }
+
+    .dessert-item {
+        position: relative;
+    }
+
+    .add-cart, .active-state {
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        font-weight: 600;
+        font-size: 1.2rem;
+        border: 1px solid hsl(14, 86%, 42%);
+        border-radius: 2rem;
+        width: 15rem;
+        padding: 1rem;
+        position: absolute;
+        bottom: 25%;
+        left: 10%;
+    }
+
+    .add-cart {
+        gap: 0.3rem;
+        color: #000;
+        background-color: white;
+    }
+
+    .active-state {
+        gap: 4rem;
+        background-color: hsl(14, 86%, 42%);
+        color:white;
+    }
+
+    /* #waffle {
+        border: 2px solid hsl(14, 86%, 42%)
+    } */
+
+    .adjust-quantity, .cart-remove-item {
+        background: none;
+        color: inherit;
+        border-radius: 50%;
+        font: inherit;
+        cursor: pointer;
+        outline: inherit;
+    }
+
+    .adjust-quantity {
+        border: 1px solid white;
+        padding: 0 0.5rem;
+    }
+
+    .adjust-quantity:hover {
+        background-color: white;
+        color:hsl(14, 86%, 42%);
+    }
+
+    .add-cart:hover {
+        color: hsl(14, 86%, 42%)
+    }
+
+    .material-symbols-outlined {
+        color: hsl(14, 86%, 42%)
+    }
+
+    #cart-container {
+        background-color: white;
+        padding: 1.4rem;
+        border-radius: 1rem;
+        height: 30%;
+        width: 25vw;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+
+    .empty-cart-img {
+        margin: auto;
+        margin-bottom: 1rem;
+    }
+
+    .added-item {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+    }
+
+    .cart-quantity {
+        color: hsl(14, 86%, 42%);
+        font-family: 'RedHatText-Bold';
+        margin-right: 1rem;
+    }
+
+    .cart-item-amount {
+        margin-right: 0.5rem;
+    }
+
+    .cart-item-total {
+        font-family: 'RedHatText-SemiBold';
+        color: gray
+    }
+
+    .cart-remove-item {
+        border: 2px solid gray;
+        height: 1.2rem;
+        width: 1.2rem;
+        text-align: center;
+        line-height: 0.3rem;
+        padding: 0 0 2px 0;
+        align-self: center;
+        color: gray;
+        font-family: 'RedHatText-SemiBold';
+    }
+
+    .cart-remove-item:hover {
+        color: black;
+        border: 2px solid black;
+    }
+
+    .cart-item-divider {
+        margin-bottom: 1rem;
+        border: none;
+        border-top: 1px solid lightgray;
+    }
+
+    .order-total-container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .order-total {
+        align-self: center;
+    }
+
+    .order-total-amt {
+        font-family: 'RedHatText-Bold';
+    }
+
+    .carbon-neutral {
+        margin-top: 1rem;
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+        background-color: hsl(13, 31%, 94%);
+        padding: 1rem;
+        border-radius: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .carbon-neutral-img {
+        display: inline;
+    }
+
+    .confirm-order {
+        border: none;
+        background-color: hsl(14, 86%, 42%);
+        color: white;
+        border-radius: 5rem;
+        padding: 1rem 0;
+        font-family: 'RedHatText-SemiBold';
+        width: 100%;
+    }
+
+    .confirm-order:hover {
+        background-color: hsl(14, 83%, 32%);
+    }
+
+    /* Display order total at the bottom of cart */
+    .totalorder-confirm-container {
+        position: absolute;
+        bottom: 0;
+        width: 90%;
+        margin-bottom: 1rem;
+        display: none;
+    }
+
+    #overlay {
+        position: fixed;
+        display: none;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 2;
+    }
+
+    /* Order Confirm container appears on overlay when "Confirm Order" btn clicked */
+    .order-confirm-container {
+        position: absolute;
+        background-color: white;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        z-index: 4;
+        left: 30%;
+        top: 10%;
+        border-radius: 2rem;
+        width: 35vw;
+        display: none;
+    }
+
+    .order-confirm-check {
+        margin-bottom: 0.5rem;
+    }
+
+    .order-confirm-heading {
+        font-size: 2rem;
+        font-family: 'RedHatText-Bold';
+    }
+
+    .order-confirm-subheading {
+        color:#757575;
+        margin-bottom: 1rem;
+    }
+
+    .order-confirm-item {
+        display: flex;
+        gap: 0.5rem;
+        padding: 1.4rem 1.4rem 1rem 1.4rem;
+    }
+
+    .order-confirm-thumbnail {
+        border-radius: 0.5rem;
+    }
+
+    .order-confirm-items-list {
+        background-color: hsl(13, 31%, 94%);
+        border-radius: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .order-confirm-item-title {
+        font-family: 'RedHatText-SemiBold';
+    }
+
+    .order-confirm-item-total {
+        margin-left: auto;
+        align-self: center;
+        font-size: 1.2rem;
+        font-family: 'RedHatText-SemiBold';
+    }
+
+    .order-confirm-divider {
+        margin-bottom: 1rem;
+        border: none;
+        border-top: 1px solid lightgray;
+        width: 90%;
+        margin: auto;
+    }
+
+    .order-confirm-total-container {
+        display: flex;
+        justify-content: space-between;
+        padding: 1.2rem;
+    }
+
+    .order-confirm-total {
+        align-self: center;
+    }
+
+    .order-confirm-total-amt {
+        font-size: 1.4rem;
+        font-family: 'RedHatText-Bold';
+    }
+
+    .attribution {
+        font-size: 11px;
+        text-align: center;
+    }
+
+    .attribution a {
+        color: hsl(228, 45%, 44%);
+    }
+
 }
-
-.cart-quantity {
-    color: hsl(14, 86%, 42%);
-    font-family: 'RedHatText-Bold';
-    margin-right: 1rem;
-}
-
-.cart-item-amount {
-    margin-right: 0.5rem;
-}
-
-.cart-item-total {
-    font-family: 'RedHatText-SemiBold';
-    color: gray
-}
-
-.cart-remove-item {
-    border: 2px solid gray;
-    height: 1.2rem;
-    width: 1.2rem;
-    text-align: center;
-    line-height: 0.3rem;
-    padding: 0 0 2px 0;
-    align-self: center;
-    color: gray;
-    font-family: 'RedHatText-SemiBold';
-}
-
-.cart-remove-item:hover {
-    color: black;
-    border: 2px solid black;
-}
-
-.cart-item-divider {
-    margin-bottom: 1rem;
-    border: none;
-    border-top: 1px solid lightgray;
-}
-
-.order-total-container {
-    display: flex;
-    justify-content: space-between;
-}
-
-.order-total {
-    align-self: center;
-}
-
-.order-total-amt {
-    font-family: 'RedHatText-Bold';
-}
-
-.carbon-neutral {
-    margin-top: 1rem;
-    display: flex;
-    justify-content: center;
-    gap: 0.5rem;
-    background-color: hsl(13, 31%, 94%);
-    padding: 1rem;
-    border-radius: 1rem;
-    margin-bottom: 1rem;
-}
-
-.carbon-neutral-img {
-    display: inline;
-}
-
-.confirm-order {
-    border: none;
-    background-color: hsl(14, 86%, 42%);
-    color: white;
-    border-radius: 5rem;
-    padding: 1rem 0;
-    font-family: 'RedHatText-SemiBold';
-    width: 100%;
-}
-
-.confirm-order:hover {
-    background-color: hsl(14, 83%, 32%);
-}
-
-/* Display order total at the bottom of cart */
-.totalorder-confirm-container {
-    position: absolute;
-    bottom: 0;
-    width: 90%;
-    margin-bottom: 1rem;
-    display: none;
-}
-
-#overlay {
-    position: fixed;
-    display: none;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 2;
-}
-
-/* Order Confirm container appears on overlay when "Confirm Order" btn clicked */
-.order-confirm-container {
-    position: absolute;
-    background-color: white;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    z-index: 4;
-    left: 30%;
-    top: 10%;
-    border-radius: 2rem;
-    width: 35vw;
-    display: none;
-}
-
-.order-confirm-check {
-    margin-bottom: 0.5rem;
-}
-
-.order-confirm-heading {
-    font-size: 2rem;
-    font-family: 'RedHatText-Bold';
-}
-
-.order-confirm-subheading {
-    color:#757575;
-    margin-bottom: 1rem;
-}
-
-.order-confirm-item {
-    display: flex;
-    gap: 0.5rem;
-    padding: 1.4rem 1.4rem 1rem 1.4rem;
-}
-
-.order-confirm-thumbnail {
-    border-radius: 0.5rem;
-}
-
-.order-confirm-items-list {
-    background-color: hsl(13, 31%, 94%);
-    border-radius: 1rem;
-    margin-bottom: 1rem;
-}
-
-.order-confirm-item-title {
-    font-family: 'RedHatText-SemiBold';
-}
-
-.order-confirm-item-total {
-    margin-left: auto;
-    align-self: center;
-    font-size: 1.2rem;
-    font-family: 'RedHatText-SemiBold';
-}
-
-.order-confirm-divider {
-    margin-bottom: 1rem;
-    border: none;
-    border-top: 1px solid lightgray;
-    width: 90%;
-    margin: auto;
-}
-
-.order-confirm-total-container {
-    display: flex;
-    justify-content: space-between;
-    padding: 1.2rem;
-}
-
-.order-confirm-total {
-    align-self: center;
-}
-
-.order-confirm-total-amt {
-    font-size: 1.4rem;
-    font-family: 'RedHatText-Bold';
-}
-
-.attribution {
-      font-size: 11px;
-      text-align: center;
-  }
-
-  .attribution a {
-      color: hsl(228, 45%, 44%);
-  }
