@@ -101,3 +101,18 @@
     padding: 0 0 25px 0;
     align-self: center;
 }
+
+/* Order Confirm container appears on overlay when "Confirm Order" btn clicked */
+.order-confirm-container {
+    position: absolute;
+    background-color: white;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    z-index: 4;
+    border-radius: 2rem;
+    display: none;
+    left: 0;
+    top: 10%;
+    width: 100vw;
+}
