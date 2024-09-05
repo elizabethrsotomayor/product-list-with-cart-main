@@ -1,4 +1,4 @@
-@import "mobstyles.css" screen and (max-width: 25rem);
+@import "mobstyles.css" screen and (max-width: 52rem);
 
 @font-face {
     font-family: 'RedHatText';
@@ -216,7 +216,7 @@ h6 {
     font-family: 'RedHatText-Bold';
 }
 
-@media screen and (min-width: 25rem) {
+@media screen and (min-width: 52rem) {
 
     .desserts-grid {
         display: grid;
