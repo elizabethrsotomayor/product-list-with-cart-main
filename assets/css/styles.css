@@ -124,6 +124,7 @@ h6 {
 
 .cart-item-amount {
     margin-right: 0.5rem;
+    color: #757575
 }
 
 .cart-item-total {
@@ -169,6 +170,50 @@ h6 {
     z-index: 4;
     border-radius: 2rem;
     display: none;
+}
+
+.order-confirm-items-list {
+    background-color: hsl(13, 31%, 94%);
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+}
+
+.order-confirm-thumbnail {
+    border-radius: 0.5rem;
+}
+
+.order-confirm-item-title {
+    font-family: 'RedHatText-SemiBold';
+}
+
+.order-confirm-item-total {
+    margin-left: auto;
+    align-self: center;
+    font-size: 1.2rem;
+    font-family: 'RedHatText-SemiBold';
+}
+
+.order-confirm-divider {
+    margin-bottom: 1rem;
+    border: none;
+    border-top: 1px solid lightgray;
+    width: 90%;
+    margin: auto;
+}
+
+.order-confirm-total-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.2rem;
+}
+
+.order-confirm-total {
+    align-self: center;
+}
+
+.order-confirm-total-amt {
+    font-size: 1.4rem;
+    font-family: 'RedHatText-Bold';
 }
 
 @media screen and (min-width: 25rem) {
@@ -341,50 +386,6 @@ h6 {
         display: flex;
         gap: 0.5rem;
         padding: 1.4rem 1.4rem 1rem 1.4rem;
-    }
-
-    .order-confirm-thumbnail {
-        border-radius: 0.5rem;
-    }
-
-    .order-confirm-items-list {
-        background-color: hsl(13, 31%, 94%);
-        border-radius: 1rem;
-        margin-bottom: 1rem;
-    }
-
-    .order-confirm-item-title {
-        font-family: 'RedHatText-SemiBold';
-    }
-
-    .order-confirm-item-total {
-        margin-left: auto;
-        align-self: center;
-        font-size: 1.2rem;
-        font-family: 'RedHatText-SemiBold';
-    }
-
-    .order-confirm-divider {
-        margin-bottom: 1rem;
-        border: none;
-        border-top: 1px solid lightgray;
-        width: 90%;
-        margin: auto;
-    }
-
-    .order-confirm-total-container {
-        display: flex;
-        justify-content: space-between;
-        padding: 1.2rem;
-    }
-
-    .order-confirm-total {
-        align-self: center;
-    }
-
-    .order-confirm-total-amt {
-        font-size: 1.4rem;
-        font-family: 'RedHatText-Bold';
     }
 
     .attribution {

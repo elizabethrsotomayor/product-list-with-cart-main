@@ -314,7 +314,7 @@ function orderConfirm() {
 
     let cartItemAmount = document.createElement("span");
     cartItemAmount.setAttribute("class", "cart-item-amount");
-    cartItemAmount.innerText = `$${(Math.round((item.price) * 100) / 100).toFixed(2)}`;
+    cartItemAmount.innerText = `@ $${(Math.round((item.price) * 100) / 100).toFixed(2)}`;
 
     let orderConfirmItemTotal = document.createElement("span");
     orderConfirmItemTotal.setAttribute("class", "order-confirm-item-total");

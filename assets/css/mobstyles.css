@@ -104,15 +104,29 @@
 
 /* Order Confirm container appears on overlay when "Confirm Order" btn clicked */
 .order-confirm-container {
-    position: absolute;
-    background-color: white;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    z-index: 4;
-    border-radius: 2rem;
-    display: none;
     left: 0;
     top: 10%;
     width: 100vw;
+}
+
+.order-confirm-item {
+    display: flex;
+    gap: 0.5rem;
+    padding: 1.4rem 1.4rem 1rem 1.4rem;
+}
+
+.order-confirm-items-list {
+    margin-top: 1rem;
+}
+
+.order-confirm-thumbnail {
+    width: 4rem;
+}
+
+.order-confirm-item-title {
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 125px;
+    white-space: nowrap;
 }
