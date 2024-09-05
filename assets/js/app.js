@@ -354,6 +354,14 @@ function orderConfirm() {
     frag.appendChild(orderConfirmTotalContainer);
 
     itemsList.appendChild(frag);
+
+    // Check to see if device is mobile
+    const isMobileDevice = /Mobi/i.test(window.navigator.userAgent);
+
+    if(isMobileDevice) {
+        // If device is a mobile, scroll to top of page for confirm modal
+        window.scrollTo(0, 0);
+    }
 }
 
 function resetCart() {

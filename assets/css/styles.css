@@ -377,6 +377,10 @@ h6 {
         margin-bottom: 0.5rem;
     }
 
+    .order-confirm-title-subtitle {
+        align-self: center;
+    }
+
     .order-confirm-subheading {
         color:#757575;
         margin-bottom: 1rem;
